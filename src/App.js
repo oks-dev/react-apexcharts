@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from 'react';
-import { ChartPage } from './ChartPage';
+import React, { useEffect, useState } from 'react'
+import { ChartPage } from './ChartPage'
 import { HorizontalChart } from './HorizontalChart'
+import { Donut } from './Donut'
 
 const url = 'http://localhost:3000/db.json';
 
@@ -9,6 +10,9 @@ const App = () => {
   const [options, setOptions] = useState({})
   const [horizontalSeries, setHorizontalSeries] = useState([])
   const [horizontalOptions, setHorizontalOptions] = useState({})
+  //Donut
+  const [donutSeries, setDonutSeries] = useState([])
+  const [donutOptions, setDonutOptions] = useState({})
 
   useEffect(() => {
     async function fetchData() {
@@ -25,6 +29,13 @@ const App = () => {
         //Chart Page
         const newSeries = Object.values(result.chart)[1]
         const newOptions = Object.values(result.chart)[0]
+
+        //Donut
+        const newDonutChartDataSeries = Object.values(result.donutChart)[0]
+        const dataDonut = newDonutChartDataSeries.map(s => s)
+        const newDonutOptions = Object.values(result.donutChart)[1]
+        setDonutSeries(dataDonut)
+        setDonutOptions(newDonutOptions)
 
         setSeries(newSeries)
         setOptions(newOptions)
@@ -48,6 +59,9 @@ const App = () => {
           horizontalSeries={horizontalSeries}
           horizontalOptions={horizontalOptions}
         />
+      </div>
+      <div className='card'>
+        <Donut donutSeries={donutSeries} donutOptions={donutOptions} />
       </div>
     </div>
   );
