@@ -1,30 +1,35 @@
 import React, { useEffect, useState } from 'react';
 import { ChartPage } from './ChartPage';
+import { HorizontalChart } from './HorizontalChart'
 
 const url = 'http://localhost:3000/db.json';
 
 const App = () => {
   const [series, setSeries] = useState([])
   const [options, setOptions] = useState({})
+  const [horizontalSeries, setHorizontalSeries] = useState([])
+  const [horizontalOptions, setHorizontalOptions] = useState({})
 
   useEffect(() => {
     async function fetchData() {
       const response = await fetch(url);
-      const newSeries = []
       if (response.ok) {
         let result = await response.json();
-
-        //series
-        const newDataSeries = Object.values(result)[1]
-        const newData = Object.values(newDataSeries)[0].data
-        const data = newData.map(s => s);
-        newSeries.push({ data: data });
-
+        //Horizontal
+        const newHorizontalChartSeries = Object.values(result.horizontalChart)[0]
+        const newHorizontalChartData = Object.values(newHorizontalChartSeries)
+        const dataHorizontal = newHorizontalChartData.map(s => s)
         //options
-        const newDataOptions = Object.values(result)[0]
+        const newHorizontalOptions = Object.values(result.horizontalChart)[1]
+
+        //Chart Page
+        const newSeries = Object.values(result.chart)[1]
+        const newOptions = Object.values(result.chart)[0]
 
         setSeries(newSeries)
-        setOptions(newDataOptions)
+        setOptions(newOptions)
+        setHorizontalSeries(dataHorizontal)
+        setHorizontalOptions(newHorizontalOptions)
       } else {
         console.log("Ошибка HTTP: " + response.status);
       }
@@ -33,10 +38,18 @@ const App = () => {
   }, [])
 
   return (
-    <>
+    <div className='wrap'>
       <h1>React Chart</h1>
-      <ChartPage series={series} options={options} />
-    </>
+      <div className='card'>
+        <ChartPage series={series} options={options} />
+      </div>
+      <div className='card'>
+        <HorizontalChart
+          horizontalSeries={horizontalSeries}
+          horizontalOptions={horizontalOptions}
+        />
+      </div>
+    </div>
   );
 }
 
