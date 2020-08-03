@@ -8,7 +8,6 @@ export const HorizontalChart = ({ horizontalSeries, horizontalOptions }) => {
         options={horizontalOptions}
         series={horizontalSeries}
         type="bar"
-        height="90%"
       />
     </div>
   )

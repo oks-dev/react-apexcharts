@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { ChartPage } from './ChartPage'
 import { HorizontalChart } from './HorizontalChart'
 import { Donut } from './Donut'
+import { Map } from './Map'
 
 const url = 'http://localhost:3000/db.json';
 
@@ -13,6 +14,8 @@ const App = () => {
   //Donut
   const [donutSeries, setDonutSeries] = useState([])
   const [donutOptions, setDonutOptions] = useState({})
+  //Map
+  const [mapData, setMapData] = useState([])
 
   useEffect(() => {
     async function fetchData() {
@@ -34,13 +37,22 @@ const App = () => {
         const newDonutChartDataSeries = Object.values(result.donutChart)[0]
         const dataDonut = newDonutChartDataSeries.map(s => s)
         const newDonutOptions = Object.values(result.donutChart)[1]
+
+        //Map
+        const newMapData = Object.values(result.mapData.svg)
+        const mapArray = newMapData.map(m => {
+          const data = Object.values(m)
+          return data
+        })
+
+
         setDonutSeries(dataDonut)
         setDonutOptions(newDonutOptions)
-
         setSeries(newSeries)
         setOptions(newOptions)
         setHorizontalSeries(dataHorizontal)
         setHorizontalOptions(newHorizontalOptions)
+        setMapData(mapArray)
       } else {
         console.log("Ошибка HTTP: " + response.status);
       }
@@ -50,7 +62,6 @@ const App = () => {
 
   return (
     <div className='wrap'>
-      <h1>React Chart</h1>
       <div className='card'>
         <ChartPage series={series} options={options} />
       </div>
@@ -62,6 +73,9 @@ const App = () => {
       </div>
       <div className='card'>
         <Donut donutSeries={donutSeries} donutOptions={donutOptions} />
+      </div>
+      <div className='card'>
+        <Map mapData={mapData} />
       </div>
     </div>
   );

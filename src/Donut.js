@@ -8,7 +8,6 @@ export const Donut = ({ donutSeries, donutOptions }) => {
         options={donutOptions}
         series={donutSeries}
         type="donut"
-        width="120%"
       />
     </div>
   );
