@@ -4,7 +4,7 @@ import { HorizontalChart } from './HorizontalChart'
 import { Donut } from './Donut'
 import { Map } from './Map'
 
-const url = '/db.json';
+const url = 'https://coatceatl.github.io/react-apexcharts/db.json';
 
 const App = () => {
   const [series, setSeries] = useState([])
