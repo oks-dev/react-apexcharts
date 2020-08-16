@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "74281f4bf871fb45bf3f6912b76577c1",
+    "revision": "15682abaf10cdcc9eda5e545e5693c2e",
     "url": "/react-apexcharts/index.html"
   },
   {
-    "revision": "2808707137c0bce9517d",
-    "url": "/react-apexcharts/static/css/main.991028b6.chunk.css"
+    "revision": "9f073673a00846428bff",
+    "url": "/react-apexcharts/static/css/main.9d2ded90.chunk.css"
   },
   {
     "revision": "1eac804b329cb5722ed4",
@@ -16,7 +16,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/react-apexcharts/static/js/2.e79debf0.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "2808707137c0bce9517d",
+    "revision": "9f073673a00846428bff",
     "url": "/react-apexcharts/static/js/main.5dc4d571.chunk.js"
   },
   {
