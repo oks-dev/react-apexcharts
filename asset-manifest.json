@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/react-apexcharts/static/css/main.9d2ded90.chunk.css",
-    "main.js": "/react-apexcharts/static/js/main.5dc4d571.chunk.js",
-    "main.js.map": "/react-apexcharts/static/js/main.5dc4d571.chunk.js.map",
+    "main.css": "/react-apexcharts/static/css/main.3e951478.chunk.css",
+    "main.js": "/react-apexcharts/static/js/main.5dc3e732.chunk.js",
+    "main.js.map": "/react-apexcharts/static/js/main.5dc3e732.chunk.js.map",
     "runtime-main.js": "/react-apexcharts/static/js/runtime-main.c57255bd.js",
     "runtime-main.js.map": "/react-apexcharts/static/js/runtime-main.c57255bd.js.map",
     "static/js/2.e79debf0.chunk.js": "/react-apexcharts/static/js/2.e79debf0.chunk.js",
     "static/js/2.e79debf0.chunk.js.map": "/react-apexcharts/static/js/2.e79debf0.chunk.js.map",
     "index.html": "/react-apexcharts/index.html",
-    "precache-manifest.421eb06cef1fbabd26e6182acb533b1d.js": "/react-apexcharts/precache-manifest.421eb06cef1fbabd26e6182acb533b1d.js",
+    "precache-manifest.afcef187007239be18a0878fae14ee8d.js": "/react-apexcharts/precache-manifest.afcef187007239be18a0878fae14ee8d.js",
     "service-worker.js": "/react-apexcharts/service-worker.js",
-    "static/css/main.9d2ded90.chunk.css.map": "/react-apexcharts/static/css/main.9d2ded90.chunk.css.map",
+    "static/css/main.3e951478.chunk.css.map": "/react-apexcharts/static/css/main.3e951478.chunk.css.map",
     "static/js/2.e79debf0.chunk.js.LICENSE.txt": "/react-apexcharts/static/js/2.e79debf0.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.c57255bd.js",
     "static/js/2.e79debf0.chunk.js",
-    "static/css/main.9d2ded90.chunk.css",
-    "static/js/main.5dc4d571.chunk.js"
+    "static/css/main.3e951478.chunk.css",
+    "static/js/main.5dc3e732.chunk.js"
   ]
 }
