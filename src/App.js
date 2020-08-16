@@ -4,7 +4,7 @@ import { HorizontalChart } from './HorizontalChart'
 import { Donut } from './Donut'
 import { Map } from './Map'
 
-const url = 'http://localhost:3000/db.json';
+const url = '/db.json';
 
 const App = () => {
   const [series, setSeries] = useState([])
